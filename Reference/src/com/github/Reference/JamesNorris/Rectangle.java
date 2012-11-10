@@ -35,36 +35,36 @@ public class Rectangle {
 		int x2 = loc2.getBlockX();
 		int y2 = loc2.getBlockY();
 		int z2 = loc2.getBlockZ();
-		int modX = 0;
-		int highX = 0;
+		int minX = 0;
+		int maxX = 0;
 		if (x < x2) {
-			modX = x;
-			highX = x2;
+			minX = x;
+			maxX = x2;
 		} else {
-			modX = x2;
-			highX = x;
+			minX = x2;
+			maxX = x;
 		}
-		int modY = 0;
-		int highY = 0;
+		int minY = 0;
+		int maxY = 0;
 		if (y < y2) {
-			modY = y;
-			highY = y2;
+			minY = y;
+			maxY = y2;
 		} else {
-			modY = y2;
-			highY = y;
+			minY = y2;
+			maxY = y;
 		}
-		int modZ = 0;
-		int highZ = 0;
+		int minZ = 0;
+		int maxZ = 0;
 		if (z < z2) {
-			modZ = z;
-			highZ = z2;
+			minZ = z;
+			maxZ = z2;
 		} else {
-			modZ = z2;
-			highZ = z;
+			minZ = z2;
+			maxZ = z;
 		}
-		for (int i = modX; i <= highX; i++) {
-			for (int j = modY; j <= highY; j++) {
-				for (int k = modZ; k <= highZ; k++) {
+		for (int i = minX; i <= maxX; i++) {
+			for (int j = minY; j <= maxY; j++) {
+				for (int k = minZ; k <= maxZ; k++) {
 					Location l = loc1.getWorld().getBlockAt(i, j, k).getLocation();
 					locs.put(l, l.getBlock().getType());
 				}
