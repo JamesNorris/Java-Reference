@@ -2,6 +2,7 @@ package com.github.Reference.JamesNorris;
 
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
 
 public class Region {
 	private Location loc1, loc2, loc3, loc4;
@@ -77,6 +78,31 @@ public class Region {
 		if (highZs && highXs)
 			highs = true;
 		return (lows && highs);		
+	}
+	
+	/**
+	 * Checks if the location is contained inside the region.
+	 * 
+	 * @param loc The location to check for
+	 * @return Whether or not the location is contained in the region
+	 */
+	public boolean contains(Location loc) {
+		boolean Xs = false, Zs = false;
+		if (lowZ <= loc.getBlockZ() && highZ >= loc.getBlockZ())
+			Zs = true;
+		if (lowX <= loc.getBlockX() && highX >= loc.getBlockX())
+			Xs = true;
+		return (Xs && Zs);	
+	}
+	
+	/**
+	 * Checks if the player is contained inside the region.
+	 * 
+	 * @param p The player to check for
+	 * @return Whether or not the player is contained in the region
+	 */
+	public boolean contains(Player p) {
+		return contains(p.getLocation());
 	}
 	
 	/**
