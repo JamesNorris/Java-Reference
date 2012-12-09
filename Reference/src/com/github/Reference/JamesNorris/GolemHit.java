@@ -1,11 +1,10 @@
 package com.github.Reference.JamesNorris;
 
+import net.minecraft.server.v1_4_5.*;
+
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.IronGolem;
-
-import net.minecraft.server.EntityIronGolem;
-import net.minecraft.server.MathHelper;
 
 public class GolemHit extends EntityIronGolem {
 	private IronGolem ig;
@@ -13,7 +12,7 @@ public class GolemHit extends EntityIronGolem {
 	/*
 	 * Creates a new instance of GolemHit, which extends NMS EntityIronGolem.
 	 */
-	public GolemHit(net.minecraft.server.World world) {
+	public GolemHit(net.minecraft.server.v1_4_5.World world) {
 		super(world);
 	}
 
