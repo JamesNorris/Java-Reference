@@ -1,7 +1,7 @@
 package com.github.Reference.JamesNorris;
 
-import net.minecraft.server.v1_4_5.*;
-import org.bukkit.craftbukkit.v1_4_5.entity.*;
+import net.minecraft.server.v1_4_6.*;
+import org.bukkit.craftbukkit.v1_4_6.entity.*;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Creature;
